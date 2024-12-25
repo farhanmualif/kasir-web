@@ -1,13 +1,13 @@
 import { useState, useEffect } from 'react';
 import { Button, Label, TextInput, Card, Alert, FileInput, Select } from 'flowbite-react';
-import { HiOutlinePlusCircle, HiArrowLeft, HiExclamationCircle } from 'react-icons/hi';
-import { NavLink, useNavigate } from 'react-router-dom';
+import {  HiExclamationCircle } from 'react-icons/hi';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import { API_URL } from '../assets/env';
-import { getAuthToken } from '../lib/getAuthToken';
-import MyNavbar from '../components/Mynavbar';
+import { API_URL } from '@/assets/env';
+import { getAuthToken } from '@/lib/getAuthToken';
+import Mynavbar from '@/components/MyNavbar';
 import { toast } from 'react-toastify';
-import Loading from '../components/Loading';
+import Loading from '@/components/Loading';
 
 const AddProduct = () => {
   const navigate = useNavigate();
@@ -112,7 +112,7 @@ const AddProduct = () => {
   };
   return (
     <>
-      <MyNavbar/>
+      <Mynavbar/>
       {isLoading ? (
         <Loading />
       ) : (

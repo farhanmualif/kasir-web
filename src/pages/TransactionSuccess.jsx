@@ -3,11 +3,10 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { Button, Modal, Select } from 'flowbite-react';
 import { FaCheckCircle, FaPrint } from 'react-icons/fa';
 import axios from 'axios';
-import { API_URL } from '../assets/env';
-import PropTypes from 'prop-types';
+import { API_URL } from '@/assets/env';
 
 import { useState } from 'react';
-import { getAuthToken } from '../lib/getAuthToken';
+import { getAuthToken } from '@/lib/getAuthToken';
 import { jsPDF } from 'jspdf';
 
 const TransactionSuccessPage = () => {
@@ -356,10 +355,6 @@ Kembali: Rp ${(invoice.cash - invoice.total_payment).toLocaleString()}
       </div>
     </div>
   );
-};
-
-TransactionSuccessPage.propTypes = {
-  no_transaction: PropTypes.string.isRequired
 };
 
 export default TransactionSuccessPage;

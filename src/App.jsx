@@ -7,12 +7,15 @@ import BuyingProduct from './pages/BuyingProduct'
 import CheckoutPage from './pages/CheckoutPage'
 import TransactionSuccessPage from './pages/TransactionSuccess'
 import AddProduct from './pages/AddProduct'
-import ReportPage from './pages/ReportPage'
 import ManagementPage from './pages/ManagementPage'
 import CategoryPage from './pages/CategoryPage'
 import ProductListPage from './pages/ProductListPage'
 import Signin from './pages/Signin'
 import Signup from './pages/Signup'
+import SalesReportPage from './pages/SalesReportPage'
+import ReportPage from './pages/ReportPage'
+import PurchaseReportPage from './pages/PurchaseReportPage'
+
 
 function App() {
   return (
@@ -36,6 +39,9 @@ function App() {
         <Route path='/management-page' element={<ManagementPage />}/>
         <Route path='/category' element={<CategoryPage />}/>
         <Route path='/products' element={<ProductListPage />}/>
+        <Route path='/report' element={<ReportPage />}/>
+        <Route path='/sales-report' element={<SalesReportPage />}/>
+        <Route path='/purchase-report' element={<PurchaseReportPage />}/>
         {/* Add other protected routes here */}
       </Route>
     </Routes>

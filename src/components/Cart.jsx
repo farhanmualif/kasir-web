@@ -5,9 +5,9 @@ import { Button } from 'flowbite-react';
 import { FaTrash, FaMinus, FaPlus } from 'react-icons/fa';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import { API_URL } from '../assets/env';
-import { getAuthToken } from '../lib/getAuthToken';
-import Loading from './Loading';
+import { API_URL } from '@/assets/env';
+import { getAuthToken } from '@/lib/getAuthToken';
+import Loading from '@/components/Loading';
 
 const Cart = ({
   cart = [], 

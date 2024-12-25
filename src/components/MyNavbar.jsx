@@ -1,9 +1,12 @@
 import { Navbar, Button } from "flowbite-react";
-import { FaStore, FaArrowLeft, FaPlusCircle, FaShoppingCart } from "react-icons/fa";
+import { FaStore, FaArrowLeft, FaPlusCircle } from "react-icons/fa";
 import { NavLink, useNavigate } from "react-router-dom";
+import PropTypes from 'prop-types';
 
-
-export default function MyNavbar({isBuyingProduct}) {
+const Mynavbar = ({isBuyingProduct}) => {
+  Mynavbar.propTypes = {
+        isBuyingProduct: PropTypes.bool.isRequired
+    };
 
     const navigate = useNavigate();
 
@@ -39,3 +42,5 @@ export default function MyNavbar({isBuyingProduct}) {
       </Navbar>
     )
     }
+
+export default Mynavbar

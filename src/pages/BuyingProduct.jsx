@@ -1,14 +1,14 @@
 import { useState, useEffect } from 'react';
 
-import ProductGrid from '../components/ProductGrid';
-import Cart from '../components/Cart';
+import ProductGrid from '@/components/ProductGrid';
+import Cart from '@/components/Cart';
 
 
 import axios from 'axios';
-import { API_URL } from '../assets/env';
-import { getAuthToken } from '../lib/getAuthToken';
-import MyNavbar from '../components/Mynavbar';
-import Loading from '../components/Loading';
+import { API_URL } from '@/assets/env';
+import { getAuthToken } from '@/lib/getAuthToken';
+import Loading from '@/components/Loading';
+import Mynavbar from '@/components/MyNavbar';
 
 const BuyingProduct = () => {
   
@@ -135,7 +135,7 @@ const BuyingProduct = () => {
 
   return (
     <div className="flex flex-col min-h-screen bg-gray-50">
-      <MyNavbar isBuyingProduct={true}/>
+      <Mynavbar isBuyingProduct={true}/>
       
       <main className="container mx-auto px-4 py-8 flex-grow">
         <div className="mb-8">

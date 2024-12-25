@@ -3,8 +3,8 @@ import  { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { Button, TextInput, Alert } from 'flowbite-react';
-import { API_URL } from '../assets/env';
-import { getAuthToken } from '../lib/getAuthToken';
+import { API_URL } from '@/assets/env';
+import { getAuthToken } from '@/lib/getAuthToken';
 
 const CheckoutPage = () => {
   const location = useLocation();

@@ -3,11 +3,12 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { HiPencil, HiTrash,  HiCamera } from 'react-icons/hi';
 import { format } from 'date-fns';
-import { API_URL } from '../assets/env';
-import { getAuthToken } from '../lib/getAuthToken';
-import MyNavbar from '../components/Mynavbar';
+import { API_URL } from '@/assets/env';
+import { getAuthToken } from '@/lib/getAuthToken';
+
 import { toast, ToastContainer } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
+import Mynavbar from '@/components/MyNavbar';
 
 
 const ProductListPage = () => {
@@ -18,6 +19,7 @@ const ProductListPage = () => {
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [isDeleting, setIsDeleting] = useState(false);
   const [openModal, setOpenModal] = useState(false);
+  // eslint-disable-next-line no-unused-vars
   const [isEditing, setIsEditing] = useState(false);
   
   const [formData, setFormData] = useState({
@@ -291,7 +293,7 @@ const ProductListPage = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <MyNavbar />
+      <Mynavbar />
       <ToastContainer />
       <div className="container mx-auto px-4 py-8">
         <div className="bg-white shadow rounded-lg overflow-hidden">

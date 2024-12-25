@@ -1,7 +1,7 @@
 import { Navigate, Outlet } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import Loading from './Loading';
+import Loading from '@/components/Loading';
 
 // Check if user is authenticated
 const isAuthenticated = async () => {

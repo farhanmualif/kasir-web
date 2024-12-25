@@ -3,8 +3,8 @@ import { NavLink, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { API_URL } from "../assets/env";
-import Loading from "../components/Loading";
+import { API_URL } from "@/assets/env";
+import Loading from "@/components/Loading";
 
 export default function Signin() {
   const [formData, setFormData] = useState({

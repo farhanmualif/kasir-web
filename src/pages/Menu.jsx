@@ -24,7 +24,7 @@ export default function Menu() {
     { 
       icon: <FileText className="w-10 h-10 text-red-500" />, 
       title: "Laporan",
-      navigateTo: '/report-page',
+      navigateTo: '/report',
       isBuyingProductPage: false
     }
   ];

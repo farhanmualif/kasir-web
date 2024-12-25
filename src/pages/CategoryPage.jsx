@@ -2,10 +2,9 @@ import { Button, Spinner, Modal, TextInput, Label } from 'flowbite-react';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { HiPlus, HiPencil, HiX, HiCheck } from 'react-icons/hi';
-import { format } from 'date-fns';
-import { API_URL } from '../assets/env';
-import { getAuthToken } from '../lib/getAuthToken';
-import MyNavbar from '../components/Mynavbar';
+import { API_URL } from '@/assets/env';
+import { getAuthToken } from '@/lib/getAuthToken';
+import Mynavbar from '@/components/MyNavbar';
 import { toast, ToastContainer } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
 
@@ -165,7 +164,7 @@ const CategoryPage = () => {
 
   return (
     <>
-      <MyNavbar isBuyingProduct={false} />
+      <Mynavbar isBuyingProduct={false} />
       <ToastContainer />
       <div className="container mx-auto p-4 mt-8">
         <div className="bg-white dark:bg-white shadow-md rounded-lg p-6">

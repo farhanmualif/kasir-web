@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import ProductGrid from '../components/ProductGrid';
-import Cart from '../components/Cart';
+import ProductGrid from '@/components/ProductGrid';
+import Cart from '@/components/Cart';
 import { useNavigate } from 'react-router-dom';
-import { API_URL } from '../assets/env';
-import { getAuthToken } from '../lib/getAuthToken';
-import MyNavbar from '../components/Mynavbar';
-import Loading from '../components/Loading';
+import { API_URL } from '@/assets/env';
+import { getAuthToken } from '@/lib/getAuthToken';
+import Mynavbar from '@/components/MyNavbar';
+import Loading from '@/components/Loading';
 
 const TransactionPage = () => {
   const [products, setProducts] = useState([]);
@@ -136,7 +136,7 @@ const TransactionPage = () => {
 
   return (
     <div className="flex flex-col min-h-screen bg-gray-50">
-      <MyNavbar isBuyingProduct={false}/>
+      <Mynavbar isBuyingProduct={false}/>
       
       {/* Tombol Toggle Cart untuk Mobile */}
       <div className="fixed bottom-6 right-6 md:hidden z-50">
