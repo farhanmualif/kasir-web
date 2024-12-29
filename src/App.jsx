@@ -15,6 +15,9 @@ import Signup from './pages/Signup'
 import SalesReportPage from './pages/SalesReportPage'
 import ReportPage from './pages/ReportPage'
 import PurchaseReportPage from './pages/PurchaseReportPage'
+import ForgotPassword from './pages/ForgotPassword'
+import ResetPassword from './pages/ResetPassword'
+import VerifyCode from './pages/VerifyCode'
 
 
 function App() {
@@ -25,6 +28,10 @@ function App() {
         <Route path='/' element={<Signin />}/>
         <Route path='/signin' element={<Signin />}/>
         <Route path='/signup' element={<Signup />}/>
+        <Route path="/forgot-password" element={<ForgotPassword />} />
+        <Route path="/reset-password" element={<ResetPassword />} />
+        <Route path="/verify-code" element={<VerifyCode />} />
+
       </Route>
 
       {/* Private Routes (only accessible when logged in) */}

@@ -1,10 +1,12 @@
-  import { useState } from "react";
+import { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { API_URL } from "@/assets/env";
 import Loading from "@/components/Loading";
+// Import icons
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 export default function Signin() {
   const [formData, setFormData] = useState({
@@ -12,6 +14,7 @@ export default function Signin() {
     password: ""
   });
   const [isLoading, setIsLoading] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
 
   const navigate = useNavigate();
   const baseUrl = API_URL();
@@ -22,6 +25,10 @@ export default function Signin() {
       ...prevState,
       [name]: value
     }));
+  };
+
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
   };
 
   const handleSubmit = async (e) => {
@@ -81,7 +88,7 @@ export default function Signin() {
             <div className="w-full bg-white rounded-lg shadow dark:shadow-lg md:mt-0 sm:max-w-md xl:p-0 dark:bg-white dark:border-gray-700">
               <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
                 <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-grey-900">
-                Silahkan Masuk
+                  Silahkan Masuk
                 </h1>
                 <form 
                   className="space-y-4 md:space-y-6" 
@@ -112,19 +119,40 @@ export default function Signin() {
                     >
                       Password
                     </label>
-                    <input
-                      type="password"
-                      name="password"
-                      id="password"
-                      placeholder="••••••••"
-                      style={{ color: 'black' }}
-                      className="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-white dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                      required
-                      value={formData.password}
-                      onChange={handleChange}
-                    />
+                    <div className="relative">
+                      <input
+                        type={showPassword ? "text" : "password"}
+                        name="password"
+                        id="password"
+                        placeholder="••••••••"
+                        className="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-white dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-900 dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                        required
+                        value={formData.password}
+                        onChange={handleChange}
+                      />
+                      <button
+                        type="button"
+                        className="absolute inset-y-0 right-0 flex items-center px-3 text-gray-600"
+                        onClick={togglePasswordVisibility}
+                      >
+                        {showPassword ? (
+                          <FaEyeSlash className="w-5 h-5" />
+                        ) : (
+                          <FaEye className="w-5 h-5" />
+                        )}
+                      </button>
+                    </div>
                   </div>
                   
+                  <div className="flex items-center justify-end">
+                    <NavLink 
+                      to="/forgot-password" 
+                      className="text-sm font-medium text-blue-600 hover:underline dark:text-blue-500"
+                    >
+                      Lupa Password?
+                    </NavLink>
+                  </div>
+
                   <button 
                     type="submit" 
                     className="w-full text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
